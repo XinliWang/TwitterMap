@@ -43,8 +43,11 @@ public final class TwitterGet {
 	private String tokenSecret;
 	private Connection conn;
 
+    //the TwitterFetchServlet will call this method
 	public void getTweets() {
+        //check if database is exist
 		checkTableExist();
+        //get token of twitter Api
 		getPropValues();
 
 		ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -65,9 +68,9 @@ public final class TwitterGet {
 						Double latitude = status.getGeoLocation().getLatitude();
 						Double longitude = status.getGeoLocation().getLongitude();
 						Long timestamp = status.getCreatedAt().getTime();
-						Twitter twitter = new Twitter(twitterId, username, latitude, longitude, content, timestamp,
-								category);
+						Twitter twitter = new Twitter(twitterId, username, latitude, longitude, content, timestamp,category);
 						try {
+                            //insert tweets into databse
 							twitterDao.insert(twitter);
 						} catch (SQLException e) {
 							e.printStackTrace();

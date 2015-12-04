@@ -32,6 +32,7 @@ public class TwitterDao {
 		private static final TwitterDao twitterDao = new TwitterDao();
 	}
 
+    //singleton pattern
 	public static TwitterDao getInstance() {
 		return Holder.twitterDao;
 	}
@@ -54,6 +55,7 @@ public class TwitterDao {
 		}
 	}
 
+    //get all json format data about all tweets
 	public JSONArray getAllTweets() {
 		//Connection conn = null;
 		PreparedStatement statement = null;
@@ -82,6 +84,7 @@ public class TwitterDao {
 		return locations;
 	}
 
+    //we will automatically check if there is table, if not then create them.
 	public void checkAndCreateTable() throws SQLException, InstantiationException, IllegalAccessException, ClassNotFoundException {
 		Connection conn = getConnection();
 		Statement statement = conn.createStatement();
@@ -93,6 +96,7 @@ public class TwitterDao {
 		return DatabaseUtil.getInstance().getConnection();
 	}
 
+    //we use this method to shutdown the database in order to stop insert operation
 	private void releaseDatabase(PreparedStatement statement, ResultSet resultSet) {
 		try {
 			DatabaseUtil.getInstance().releaseResultSet(resultSet);

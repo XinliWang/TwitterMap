@@ -14,8 +14,7 @@ public class TwitterGetServlet extends HttpServlet {
 	private TwitterGet twitterGet = TwitterGet.getInstance();
 
 	/**
-	 * Used to fetch real time twitter data from Twitter
-	 * Notice: once triggered, it will never stop
+	 * Use this servlet we will stop to get tweets.  It is usually called when we close the browser
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

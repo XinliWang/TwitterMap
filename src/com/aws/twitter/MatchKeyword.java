@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MatchKeyword {
+    //we will get the key word from below lists. It includes all kinds of word using regex
 	protected static final String[] Keywords = new String[] { "halloween", "music", "game", "android", "amazon", "job",
 			"movie", "news" };
 	private static final String regex = "[mM][uU][sS][iI][cC]|[gG][aA][mM][eE]|[aA][mM][aA][zZ][oO][nN]|[mM][oO][vV][iI][eE]|"

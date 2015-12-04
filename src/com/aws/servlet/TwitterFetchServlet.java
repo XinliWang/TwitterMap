@@ -15,6 +15,10 @@ import com.aws.twitter.TwitterGet;
 import twitter4j.JSONException;
 import twitter4j.JSONObject;
 
+/**
+ *  The class could start to fetch the tweets
+ */
+
 public class TwitterFetchServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -24,6 +28,7 @@ public class TwitterFetchServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws IOException, ServletException {
 		String c = req.getParameter("crawl");
+        //I use ajax,when open browser, we will execute it
 		if("crawl".equals(c)){
 			twitterGet.getTweets();
 		}

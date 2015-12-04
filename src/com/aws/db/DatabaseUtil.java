@@ -8,6 +8,7 @@ import java.util.Properties;
 
 public class DatabaseUtil {
 
+    //we put configuration and sensitive data into this file
 	private static final String PROPERTIES_NAME = "config.properties";
 	private static final String PROPERTIES_NOT_FOUND = "property file '" + PROPERTIES_NAME
 			+ "' not found in the classpath";
@@ -19,6 +20,7 @@ public class DatabaseUtil {
 		private static final DatabaseUtil databaseUtil = new DatabaseUtil();
 	}
 
+    //we use singleton pattern to call database
 	public static DatabaseUtil getInstance() {
 		return Holder.databaseUtil;
 	}
@@ -56,6 +58,7 @@ public class DatabaseUtil {
 		String jdbcUrl = null;
 		InputStream inputStream = null;
 		try {
+            //read the config.properties
 			Properties prop = new Properties();
 			inputStream = getClass().getClassLoader().getResourceAsStream(PROPERTIES_NAME);
 			if (inputStream != null) {
