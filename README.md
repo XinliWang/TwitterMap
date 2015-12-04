@@ -16,4 +16,10 @@ You create a scatter plot or any nice plot that depicts all the twits with a the
 You should provide a filter that allows a drop down keywords to choose from and only shows twits with those keywords on a google map.           
 Categories of your choosing, show what is trending and where in that category. Example categories could be News, Music, Person etc.      
 
+
 ![TwitterMap](https://cloud.githubusercontent.com/assets/10342877/11601916/972aee74-9aa4-11e5-9237-0a84a7c5c211.png)
+
+Function Description:
+1.When we open website, it will send ajax call to TwitterFetchServlet to start to crawl tweets using Twitter Stream API. 
+2.We will save them into database and at the same time, we will store this tweets into JsonArray, and transform into heatmap.js, parse it and display them into view page. 
+3.We also set a timer to get json data of all tweets from database periodly, and sort it by different categories(keywords) in heatmap.js
