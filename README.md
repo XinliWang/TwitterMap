@@ -14,4 +14,6 @@ Collect about 100MB twits using Twitter API.
 Parse the Twits and store in Dataset. The parsed twits should have location information and a set of key words from the content of the twits.               
 You create a scatter plot or any nice plot that depicts all the twits with a the density map - perhaps with color gradient etc. (extra credit - 10 points for nice visualization)            
 You should provide a filter that allows a drop down keywords to choose from and only shows twits with those keywords on a google map.           
-Categories of your choosing, show what is trending and where in that category. Example categories could be News, Music, Person etc.   
+Categories of your choosing, show what is trending and where in that category. Example categories could be News, Music, Person etc.      
+
+![TwitterMap](https://cloud.githubusercontent.com/assets/10342877/11601916/972aee74-9aa4-11e5-9237-0a84a7c5c211.png)
